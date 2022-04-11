@@ -1,0 +1,63 @@
+html, body {
+    margin: 0;
+    font-size: 12px;
+}
+
+header {
+    padding: 15px;
+    height: 80px;
+    box-sizing: border-box;
+    gap: 10px;
+}
+
+h1 {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+}
+
+.main_link {
+    height: 100%;
+}
+
+header div {
+    border-radius: 30px;
+}
+
+.search_input {
+    outline: 0;
+    border: none;
+}
+
+.search_line {
+    width: 100%;
+}
+
+.padding_header_elements {
+    padding: 1rem;
+}
+
+.flex {
+    display: flex;
+}
+
+img {
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.set_black {
+    background-color: black;
+}
+
+.small_size {
+    padding: 7px;
+}
+
+.gray {
+    background-color: rgb(224, 224, 224);
+}
