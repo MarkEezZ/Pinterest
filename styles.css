@@ -32,33 +32,42 @@ header div {
     border-radius: 50px;
 }
 
-.search_input {
-    outline: 0;
-    border: none;
-    width: 100%;
-    height: 100%;
-}
 
-.search_line {
+
+/* .search_line {
     display: flex;
     width: 100%;
     height: 50%;
     justify-content: center;
     align-items: center;
     align-self: center;
-}
+} */
 
 /* /////////////////// */
+.search_input {
+    outline: 0;
+    border: none;
+    width: 75%;
+    height: 100%;
+}
+
+.padding_header_elements {
+    border-radius: 50px;
+}
+
+.padding_header_elements:active {
+    background-color: #e0e0e0;
+}
 
 .search_input {
     background-image: url(./assets/search.png);
     background-repeat: no-repeat;
-    background-position: left;
+    background-position: 10px;
     border-radius: 50px;
 }
 
 .search_input {
-    padding: 0 2%;
+    padding: 0 35px;
     height: 50px;
     font-size: 15px;
 }
@@ -74,16 +83,111 @@ header div {
     border: 4px solid lightskyblue;
 }
 
-button {
+
+input[type="search"]::-webkit-search-cancel-button {
+    /* псевдо что-то, что отвечает за кнопку очистки */
+    -webkit-appearance: none;
+    /* без сброса оформление не применится */
+    width: 4%;
+    height: 40px;
+    /* размеры кастомного крестика */
+    background-image: url(./assets/free-icon-cancel-181661\ \(1\).png);
+    background-repeat: no-repeat;
+    background-position: center;
+    /* новый вид крестика */
     cursor: pointer;
+    border-radius: 50px;
+    margin-right: -1.5%;
 }
 
-.cancel_button:hover {
+input[type="search"]::-webkit-search-cancel-button:hover {
     background-color: #d0d0d0;
 }
 
-
 /* ////////////////// */
+
+/* /////////////////////////////// */
+/*Для пунктов меню*/
+/* #nav {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    align-self: center;
+    height: 70px;
+    background-color: aqua;
+}  */
+
+nav img {
+    max-width: 20%;
+    max-height: 20%;
+}
+
+#nav ul {
+    list-style: none;
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nav>ul>li {
+    float: right 0;
+    position: relative;
+}
+
+#nav>ul>li {
+    float: left;
+    position: relative;
+}
+
+#nav li a {
+    border-radius: 50px;
+    display: block;
+    color: #060A13;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.uckButton i {
+    border-radius: 50px;
+    color: gray;
+}
+
+#nav li .second {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 200%;
+    white-space: nowrap;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: left;
+    width: 100px;
+}
+
+.show {
+    display: block;
+}
+
+.newStyle {
+    display: block !Important;
+}
+
+#second {
+    display: none;
+    position: absolute;
+    top: 100%;
+    color: #060A13;
+}
+
+
+
+
+
+
+/* ////////////////////////// */
+
 
 .padding_header_elements {
     padding: 1rem;
@@ -97,7 +201,7 @@ img {
     height: 100%;
 }
 
-a {
+.main_button {
     text-decoration: none;
     color: white;
 }
