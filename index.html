@@ -6,59 +6,101 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="styles.css">
-    <title>Pinterest</title>
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
 </head>
 
 <body>
-    <header class="flex">
-        <div class="padding_header_elements">
-            <a href="#start_content">
-                <img src="./assets/pinterest_logo.png" alt="logo">
+    <div class="allThis">
+        <header class="flex">
+            <div class="padding_header_elements">
+                <a href="#start_content">
+                    <img src="./assets/pinterest_logo.png" alt="logo">
+                </a>
+            </div>
+            <a href="#start_content" class="main_button">
+                <div class="set_black main_link">
+                    <h1>Главная</h1>
+                </div>
             </a>
-        </div>
-        <a href="#start_content" class="main_button">
-            <div class="set_black main_link">
-                <h1>Главная</h1>
-            </div>
-        </a>
-        <input class="search_input gray" type="search" name="f" placeholder="Поиск" id="poisk">
-        <div class="dd expanded" data-type="hor" data-event="click" id="horMenu">
-            <div class="dd__item">
-                <a href="#" class="dd__link"><i class="bi bi-bell-fill"></i></a>
-                <ul class="dd__sub">
-                    <li class="dd__sub-item">item 1</li>
-                    <li class="dd__sub-item" disabled="true">item 2</li>
-                    <li class="dd__sub-item dd__sub-item__bold">item 3</li>
-                    <li class="dd__sub-item dd__sub-item__italic"><a href="//mail.ru/" target="_blank">item 4</a></li>
-                </ul>
-            </div>
-            <div class="dd__item">
-                <span class="dd__link"><i class="bi bi-chat-dots-fill"></i></span>
-            </div>
-            <div class="dd__item">
-                <span class="dd__link"><i class="bi bi-person-circle" id="face"></i></span>
-            </div>
-            <div class="dd__item">
-                <span class="dd__link shevron"><i class="bi bi-chevron-down"></i></span>
-                <ul class="dd__sub">
-                    <p>Ваши аккаунты</p>
-                    <li><a href="#">Добавить аккаунт</a></li>
-                    <li><a href="#">Перейти на бизнес-аккаунт</a></li>
-                    <p>Дополнительно</p>
-                    <li><a href="#">Настройки</a></li>
-                    <li><a href="#">Настроить ленту</a></li>
-                    <li><a href="#">Установить приложение Windows</a></li>
-                    <li><a href="#">Получить справку <i class="bi bi-arrow-up-right"></i></a></li>
-                    <li><a href="#">Посмотреть условия и политику ...<i class="bi bi-arrow-up-right"></i></a></li>
-                    <li><a href="#">Выход</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
-    <main id="start_content">
+            <input class="search_input gray" id="input" type="search" value="" name="f" placeholder="Поиск">
 
-    </main>
+            <div class="dd expanded" data-type="hor" data-event="click" id="horMenu">
+                <div class="dd__item">
+                    <span class="dd__link"><i class="bi bi-bell-fill" id="shevronBell"></i></span>
+
+                </div>
+                <div class="dd__item">
+                    <span class="dd__link"><i class="bi bi-chat-dots-fill"></i></span>
+                </div>
+                <div class="dd__item">
+                    <span class="dd__link"><i class="bi bi-person-circle" id="face"></i></span>
+                </div>
+                <div class="dd__item">
+                    <button onclick="myFunction()" class="dropbtn">ᐯ</button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#">Tato</a>
+                        <a href="#">Flowers</a>
+                        <a href="#">Cars</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main id="start_content">
+            <div class="image_div">
+                <div class="inside">
+                    <button id="myBtn">&#9998;</button>
+                    <button id="myBtnLike"> &#9825;</button>
+                    <div id="myModal" class="modal">
+                        <div class="modal-content">
+                            Выберите причину жалобы
+                            <span class="close">&times;</span>
+                            <form action=" " method="post">
+                                <input type="radio" value="Test">Test 1
+                                <br>
+                                <input type="radio" value="Test">Test 2
+                                <br>
+                                <input type="radio" value="Test">Test 3
+                                <br>
+                                <input type="radio" value="Test">Test 4
+                                <br>
+                                <input type="radio" value="Test">Test 5
+                                <br>
+                                <input type="radio" value="Test">Test 6
+                                <br>
+                                <input type="radio" value="Test">Test 7
+                                <br>
+                                <button type="submit" id="zal">SEND</button>
+                                <button type="reset">CANCEL</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div id="myModalLike" class="modalLike">
+                        <!-- Модальное содержание -->
+                        <div class="modal-contentLike">
+                            <span class="closeLike">&times;</span>
+                            <form action="" method="post">
+                                ДОБАВИТЬ НА ДОСКУ
+                                <br>
+                                <input type="radio" value="desk">cars
+                                <br>
+                                <input type="radio" value="desk">flowers
+                                <br>
+                                <input type="radio" value="desk">tato
+                                <br>
+                                <button type="button" id="add">ADD</button>
+                                <button type="reset">CANCEL</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+           
+        </main>
+
+    </div>
+
     <script src="./script.js"></script>
 </body>
 
