@@ -1,6 +1,7 @@
 html,
 body {
     margin: 0;
+    font-family: 'Calibri';
     font-size: 12px;
 }
 
@@ -11,14 +12,6 @@ header {
     gap: 10px;
 }
 
-.flex a {
-    font-size: 9px;
-    text-decoration: none;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-}
-
 h1 {
     margin: 0;
     padding: 10px;
@@ -27,6 +20,11 @@ h1 {
 
 .main_link {
     height: 100%;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
 }
 
 header div {
@@ -41,13 +39,18 @@ header div {
     display: flex;
 }
 
-img {
-    height: 100%;
+
+button {
+    border: none;
 }
 
 .main_button {
     text-decoration: none;
     color: white;
+    font-size: 9px;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
 }
 
 .set_black {
@@ -62,8 +65,9 @@ img {
 .search_input {
     outline: 0;
     border: none;
-    width: 75%;
+    width: 100%;
     height: 100%;
+    transition: 0.3s;
 }
 
 .padding_header_elements {
@@ -79,6 +83,16 @@ img {
     background-repeat: no-repeat;
     background-position: 10px;
     border-radius: 50px;
+}
+
+.pinterest_logo {
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.pinterest_logo:hover {
+    background-color: rgb(221, 221, 221);
+    transition: 0.3s;
 }
 
 .search_input {
@@ -121,22 +135,12 @@ input[type="search"]::-webkit-search-cancel-button:hover {
 /* ////////////////// */
 /* //////////////////// */
 p {
-    font-size: 10px;
+    font-size: 16px;
+    margin: 10px 15px 15px 15px;
 }
 
-.dd {
-    align-self: center;
-    display: inline-block;
-}
-
-.dd__item {
-    display: inline-block;
-    border: none;
-    position: relative;
-}
-
-.dd__item a {
-    font-size: 30px;
+.expand_button {
+    width: 50px;
 }
 
 .dd__link {
@@ -146,29 +150,32 @@ p {
     display: inline-block;
 }
 
-.dd__item i {
-    color: gray;
-    font-size: 20px;
-}
-
 .dropbtn {
-    color: black;
-    padding: 16px;
+    background-color: white;
+    padding: 16px 20px;
     font-size: 16px;
+    border-radius: 50px;
     border: none;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.dropbtn:hover {
+    background-color: rgb(220, 220, 220);
+    transition: 0.3s;
 }
 
 .dropdown-content {
     display: none;
-    position: absolute;
+    position: fixed;
     background-color: #f1f1f1;
     min-width: 160px;
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     border-radius: 15px;
-    margin-left: -100px;
+    margin-left: -150px;
+    margin-top: 50px;
 }
 
 .dropdown-content a {
@@ -192,10 +199,7 @@ p {
  }
  
  .image_div {
-    display: block;
     width: 20%;
-    height: 400px;
-    margin: 15px;
     border-radius: 15px;
     background-image: url(https://avatars.mds.yandex.net/i?id=d9b0fc600323dfee52d5eda70a21b09e-4960599-images-thumbs&n=13&exp=1);
     background-size: cover;
@@ -205,10 +209,12 @@ p {
  .inside {
     width: 100%;
     height: 100%;
-    z-index: 10;
     background-color: rgba(0, 0, 0, 0.55);
     border-radius: 15px;
-    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+    position: absolute;
+    top: 0; left: 0;
  }
  
  .inside button {
@@ -219,15 +225,29 @@ p {
     /* margin-top: 180%;
     margin-left: 30%; */
  }
- 
- .image_div:hover .inside {
-    visibility: visible;
+
+ .buttons_padding {
+     flex-direction: row;
+     padding: 15px;
  }
  
+ .inside:hover {
+    opacity: 1;
+    transition: 0.3s;
+ }
+ 
+ .feed_button_margin {
+     margin-right: 8px;
+ }
+
  /* ////////////////////////////////////////////////
  модальные окно с жалобой */
  .newStyle {
     display: flex !important;
+ }
+
+ .expand_arrow {
+     width: auto;
  }
  
  .modal {
@@ -244,7 +264,6 @@ p {
     /* Полная высота */
     overflow: auto;
     /* Включите прокрутку, если это необходимо */
- 
  }
  
  /* Модальное содержание */
@@ -254,13 +273,13 @@ p {
     background-color: #fefefe;
     margin: auto;
     padding: 2%;
-    border: 3px solid black;
     border-radius: 15px;
     width: 20%;
     height: 50%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     line-height: 40px;
     text-align: left;
+    border: none;
  }
  
  .modal-content button {
@@ -294,6 +313,50 @@ p {
     cursor: pointer;
  }
  
+.modal_dropdown {
+    position: fixed;
+    z-index: 1;
+    background-color: #2e2e2e;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    height: 150px;
+    width: 150px;
+    padding: 20px;
+    top: 50px;
+    margin-left: -180px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: auto;
+}
+
+.modal_dropdown div {
+    background-color: rgb(241, 241, 241);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    height: 30%;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.dropdown_text {
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    margin: auto;
+    transition: 0.3s;
+}
+
+.modal_dropdown div:hover {
+    background-color: #ffffff;
+    transition: 0.3s;
+}
+
+.dropdown_text:hover {
+    color: rgb(151, 0, 0);
+    transition: 0.3s;
+}
+
  /* ////////////////////////////////////////////////
  модальные окно с лайком */
  
@@ -317,9 +380,9 @@ p {
     cursor: pointer;
     position: relative;
     background-color: #fefefe;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     margin: auto;
     padding: 2%;
-    border: 3px solid black;
     border-radius: 15px;
     width: 20%;
     height: 50%;
